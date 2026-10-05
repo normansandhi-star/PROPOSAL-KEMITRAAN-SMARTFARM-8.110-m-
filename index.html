@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Proposal Kemitraan Smartfarm ±8.110 m² — Norman Sandhi</title>
+
+<style>
+:root{
+  --navy:#17365d;
+  --gold:#b08d3c;
+  --dark:#243447;
+  --muted:#657384;
+  --light:#f3f6f9;
+  --line:#d9e1ea;
+  --green:#2e6b4e;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#e9edf2;
+  color:var(--dark);
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+  font-size:14px;
+  line-height:1.65;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.toolbar{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px;
+  background:#122b49;
+  box-shadow:0 3px 12px rgba(0,0,0,.18);
+}
+
+.toolbar button{
+  border:0;
+  border-radius:7px;
+  padding:10px 18px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.btn-print{
+  background:var(--gold);
+  color:#fff;
+}
+
+.btn-top{
+  background:#fff;
+  color:var(--navy);
+}
+
+/* =========================
+   PAPER
+========================= */
+
+.paper{
+  width:210mm;
+  min-height:297mm;
+  margin:18px auto;
+  padding:17mm 18mm 18mm;
+  background:#fff;
+  box-shadow:0 5px 25px rgba(0,0,0,.12);
+  position:relative;
+  page-break-after:always;
+}
+
+.paper:last-child{
+  page-break-after:auto;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3{
+  color:var(--navy);
+}
+
+h1{
+  font-size:24px;
+  line-height:1.2;
+  margin:0 0 10px;
+}
+
+h2{
+  font-size:21px;
+  line-height:1.25;
+  margin:0 0 12px;
+}
+
+h3{
+  font-size:15px;
+  margin:18px 0 7px;
+}
+
+p{
+  margin:0 0 9px;
+}
+
+.small{
+  font-size:12px;
+}
+
+.tiny{
+  font-size:10px;
+  line-height:1.5;
+  color:#586575;
+}
+
+.center{
+  text-align:center;
+}
+
+.gold-line{
+  width:62%;
+  height:3px;
+  background:var(--gold);
+  margin:18px auto 24px;
+}
+
+.section-title{
+  border-bottom:1px solid var(--gold);
+  padding-bottom:9px;
+  margin-bottom:18px;
+}
+
+.section-number{
+  font-size:13px;
+  color:var(--gold);
+  font-weight:800;
+  letter-spacing:1px;
+  display:block;
+  margin-bottom:3px;
+}
+
+/* =========================
+   COVER
+========================= */
+
+.cover{
+  min-height:262mm;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.cover-kicker{
+  text-align:center;
+  font-size:14px;
+  color:var(--dark);
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.cover-title{
+  text-align:center;
+  font-size:30px;
+  line-height:1.15;
+  color:var(--navy);
+  font-weight:800;
+  margin:8px 0;
+}
+
+.cover-subtitle{
+  text-align:center;
+  font-size:18px;
+  color:var(--navy);
+  font-weight:700;
+}
+
+.cover-description{
+  text-align:center;
+  font-size:14px;
+  color:var(--dark);
+  max-width:145mm;
+  margin:0 auto 25px;
+}
+
+.cover-meta{
+  width:145mm;
+  max-width:100%;
+  margin:0 auto;
+  border:1px solid var(--line);
+  background:var(--light);
+}
+
+.cover-meta-row{
+  display:grid;
+  grid-template-columns:42% 58%;
+  border-bottom:1px solid var(--line);
+}
+
+.cover-meta-row:last-child{
+  border-bottom:0;
+}
+
+.cover-meta-row div{
+  padding:8px 10px;
+}
+
+.cover-meta-row div:first-child{
+  font-weight:800;
+  color:var(--navy);
+}
+
+.year{
+  margin-top:25px;
+  text-align:center;
+  color:var(--navy);
+  font-weight:800;
+  font-size:15px;
+}
+
+/* =========================
+   CALLOUT
+========================= */
+
+.callout{
+  background:var(--light);
+  border-left:5px solid var(--gold);
+  padding:12px 14px;
+  margin:13px 0;
+  font-weight:600;
+}
+
+.callout.green{
+  border-left-color:var(--green);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0 16px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:11.5px;
+}
+
+th{
+  background:var(--navy);
+  color:#fff;
+  font-weight:700;
+  text-align:left;
+  padding:8px 7px;
+  border:1px solid #17365d;
+}
+
+td{
+  padding:7px;
+  vertical-align:top;
+  border:1px solid var(--line);
+}
+
+tbody tr:nth-child(even){
+  background:#f7f9fb;
+}
+
+.total-row td{
+  font-weight:800;
+  background:#eef3f8;
+}
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.card{
+  border:1px solid var(--line);
+  padding:13px;
+  background:#fff;
+}
+
+.card h3{
+  margin-top:0;
+}
+
+/* =========================
+   FLOW
+========================= */
+
+.flow{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  gap:7px;
+  margin:20px 0;
+}
+
+.flow-box{
+  flex:1;
+  min-height:70px;
+  padding:10px;
+  background:var(--light);
+  border:1px solid var(--line);
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:var(--navy);
+}
+
+.flow-arrow{
+  display:flex;
+  align-items:center;
+  color:var(--gold);
+  font-size:20px;
+  font-weight:800;
+}
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature{
+  margin-top:35px;
+  width:70%;
+  margin-left:auto;
+  text-align:left;
+}
+
+.signature-space{
+  height:55px;
+}
+
+.signature-name{
+  font-weight:800;
+  text-decoration:underline;
+}
+
+/* =========================
+   BACK PAGE
+========================= */
+
+.back-page{
+  min-height:262mm;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.contact-box{
+  width:145mm;
+  max-width:100%;
+  border:1px solid var(--line);
+  background:var(--light);
+}
+
+.contact-row{
+  display:grid;
+  grid-template-columns:42% 58%;
+  border-bottom:1px solid var(--line);
+}
+
+.contact-row:last-child{
+  border-bottom:0;
+}
+
+.contact-row div{
+  padding:9px 11px;
+}
+
+.contact-row div:first-child{
+  font-weight:800;
+  color:var(--navy);
+}
+
+/* =========================
+   PAGE FOOTER
+========================= */
+
+.page-footer{
+  position:absolute;
+  bottom:8mm;
+  left:18mm;
+  right:18mm;
+  border-top:1px solid var(--line);
+  padding-top:5px;
+  display:flex;
+  justify-content:space-between;
+  font-size:9px;
+  color:var(--muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+  body{
+    background:#fff;
+  }
+
+  .toolbar{
+    position:sticky;
+    padding:8px;
+  }
+
+  .toolbar button{
+    font-size:12px;
+    padding:9px 12px;
+  }
+
+  .paper{
+    width:100%;
+    min-height:auto;
+    margin:0;
+    padding:30px 20px 50px;
+    box-shadow:none;
+  }
+
+  .cover{
+    min-height:calc(100vh - 90px);
+  }
+
+  .two-col{
+    grid-template-columns:1fr;
+  }
+
+  .flow{
+    flex-direction:column;
+  }
+
+  .flow-arrow{
+    justify-content:center;
+    transform:rotate(90deg);
+  }
+
+  .signature{
+    width:100%;
+  }
+
+  table{
+    font-size:11px;
+  }
+}
+
+/* =========================
+   PRINT
+========================= */
+
+@page{
+  size:A4;
+  margin:0;
+}
+
+@media print{
+
+  html,
+  body{
+    width:210mm;
+    background:#fff;
+  }
+
+  body{
+    font-size:10.5pt;
+    line-height:1.55;
+  }
+
+  .toolbar{
+    display:none !important;
+  }
+
+  .paper{
+    width:210mm;
+    height:297mm;
+    min-height:297mm;
+    margin:0;
+    padding:17mm 18mm 18mm;
+    box-shadow:none;
+    page-break-after:always;
+    overflow:hidden;
+  }
+
+  .paper:last-child{
+    page-break-after:auto;
+  }
+
+  .cover{
+    min-height:262mm;
+  }
+
+  .page-footer{
+    display:flex;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  h2{
+    font-size:18px;
+  }
+
+  h3{
+    font-size:13px;
+  }
+
+  table{
+    font-size:9.2pt;
+  }
+
+  th,
+  td{
+    padding:6px;
+  }
+
+  .callout{
+    break-inside:avoid;
+  }
+
+  table,
+  .card{
+    break-inside:avoid;
+  }
+
+  a{
+    color:inherit;
+    text-decoration:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     TOOLBAR
+========================= -->
+
+<div class="toolbar">
+
+  <button class="btn-print" onclick="window.print()">
+    🖨️ Cetak / Simpan PDF
+  </button>
+
+  <button class="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑ Ke Atas
+  </button>
+
+</div>
+
+
+<!-- =========================================================
+     HALAMAN 1 — COVER
+========================================================= -->
+
+<section class="paper">
+
+  <div class="cover">
+
+    <div class="cover-kicker">
+      PROPOSAL KEMITRAAN
+    </div>
+
+    <div class="cover-title">
+      SMARTFARM<br>
+      POULTRY DEVELOPMENT
+    </div>
+
+    <div class="cover-subtitle">
+      PEMANFAATAN LAHAN ±8.110 m²
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="cover-description">
+      Mencari Strategic Investor / Pemodal dan
+      Mitra Smartfarm / Integrator
+    </div>
+
+    <div class="cover-meta">
+
+      <div class="cover-meta-row">
+        <div>PEMILIK / PENGUSUL LAHAN</div>
+        <div><strong>Norman Sandhi</strong></div>
+      </div>
+
+      <div class="cover-meta-row">
+        <div>LUAS LAHAN</div>
+        <div>±8.110 m²</div>
+      </div>
+
+      <div class="cover-meta-row">
+        <div>MODEL PROYEK</div>
+        <div>Closed House / Smartfarm Broiler</div>
+      </div>
+
+      <div class="cover-meta-row">
+        <div>TAHAP AWAL</div>
+        <div>±20.000 ekor / siklus</div>
+      </div>
+
+      <div class="cover-meta-row">
+        <div>WILAYAH</div>
+        <div>Jawa Timur</div>
+      </div>
+
+      <div class="cover-meta-row">
+        <div>STATUS DOKUMEN</div>
+        <div>Penawaran Kerja Sama / Preliminary Proposal</div>
+      </div>
+
+    </div>
+
+    <div class="year">
+      2026
+    </div>
+
+    <p class="center small">
+      Dokumen penawaran untuk pembahasan awal dengan perusahaan,
+      investor, dan mitra strategis.
+    </p>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM • ±8.110 m² • 2026</span>
+    <span>1</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 2 — EXECUTIVE SUMMARY
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">01</span>
+    <h2>EXECUTIVE SUMMARY</h2>
+  </div>
+
+  <p>
+    Proposal ini menawarkan pengembangan lahan ±8.110 m² menjadi
+    fasilitas peternakan broiler modern berbasis Smartfarm/Closed House.
+    Pemilik lahan menyediakan kontribusi lahan, sementara investor/pemodal
+    diharapkan membiayai pembangunan fasilitas dan mitra Smartfarm/integrator
+    memberikan dukungan sistem produksi, teknis, sarana produksi, serta
+    mekanisme penyerapan sesuai program kemitraan yang tersedia.
+  </p>
+
+  <p>
+    <strong>Tujuan utama:</strong> membangun proyek yang layak secara teknis,
+    transparan secara finansial, dan dapat diperluas bertahap tanpa
+    mengharuskan investor membeli lahan.
+  </p>
+
+  <p>
+    <strong>Skala awal:</strong> ±20.000 ekor per siklus, dengan masterplan
+    yang memungkinkan evaluasi ekspansi menuju 30.000–40.000 ekor apabila
+    performa Fase I memenuhi target.
+  </p>
+
+  <p>
+    <strong>Estimasi investasi awal:</strong> sekitar Rp2,5–Rp3,0 miliar
+    untuk fasilitas closed house dan pendukungnya.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Ringkasan</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Lahan</td>
+          <td>±8.110 m²</td>
+        </tr>
+
+        <tr>
+          <td>Tahap I</td>
+          <td>±20.000 ekor/siklus</td>
+        </tr>
+
+        <tr>
+          <td>Model</td>
+          <td>Closed House / Smartfarm</td>
+        </tr>
+
+        <tr>
+          <td>Pihak utama</td>
+          <td>Pemilik Lahan – Investor – Smartfarm/Integrator</td>
+        </tr>
+
+        <tr>
+          <td>Estimasi Capex</td>
+          <td>±Rp2,5–Rp3,0 miliar*</td>
+        </tr>
+
+        <tr>
+          <td>Kontribusi pemilik</td>
+          <td>Lahan sebagai kontribusi non-tunai</td>
+        </tr>
+
+        <tr>
+          <td>Target kerja sama</td>
+          <td>Jangka menengah/panjang, berbasis perjanjian</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    * Seluruh angka investasi, performa dan pembagian hasil harus
+    divalidasi melalui feasibility study dan dokumen kerja sama.
+    Proposal ini bukan jaminan keuntungan.
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>2</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 3 — MASTERPLAN
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">02</span>
+    <h2>KONSEP PROYEK &amp; MASTERPLAN</h2>
+  </div>
+
+  <p>
+    Lahan tidak diarahkan untuk dipenuhi bangunan kandang sekaligus.
+    Masterplan menggunakan pendekatan bertahap agar modal dapat dikendalikan,
+    performa produksi dapat dibuktikan, dan ekspansi hanya dilakukan setelah
+    indikator usaha memenuhi target.
+  </p>
+
+  <p>
+    Komponen kawasan yang direncanakan meliputi kandang, jalan internal,
+    area loading, gudang, utilitas listrik dan air, biosecurity, ruang
+    operator, pengelolaan limbah, buffer area, dan cadangan ekspansi.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Fase</th>
+          <th>Kapasitas Indikatif</th>
+          <th>Fokus</th>
+          <th>Pemicu Ekspansi</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>I</td>
+          <td>±20.000 ekor</td>
+          <td>Kandang + utilitas + sistem produksi</td>
+          <td>Performa teknis &amp; cash flow sehat</td>
+        </tr>
+
+        <tr>
+          <td>II</td>
+          <td>±30.000 ekor</td>
+          <td>Penambahan kapasitas</td>
+          <td>Fase I memenuhi KPI</td>
+        </tr>
+
+        <tr>
+          <td>III</td>
+          <td>±40.000 ekor</td>
+          <td>Optimasi skala</td>
+          <td>Pasar, perizinan &amp; modal mendukung</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    Prinsip pengembangan: <strong>build-to-proof, bukan build-at-once.</strong>
+    Investor dapat menilai hasil nyata dari tahap awal sebelum dana tambahan
+    ditanamkan.
+  </div>
+
+  <div class="flow">
+
+    <div class="flow-box">
+      LAHAN<br>±8.110 m²
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      FASE I<br>20.000
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      EVALUASI<br>KPI
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      EKSPANSI<br>30–40 RIBU
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>3</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 4 — 3 PIHAK
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">03</span>
+    <h2>STRUKTUR KEMITRAAN TIGA PIHAK</h2>
+  </div>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Pihak</th>
+          <th>Kontribusi Utama</th>
+          <th>Imbalan / Hak Ekonomi</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>
+            <strong>Pemilik Lahan</strong><br>
+            Norman Sandhi
+          </td>
+
+          <td>
+            Lahan ±8.110 m²; dukungan koordinasi lokal;
+            pengawasan proyek.
+          </td>
+
+          <td>
+            Porsi ekonomi dari nilai kontribusi lahan
+            dan/atau profit sharing.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>Investor / Pemodal</strong>
+          </td>
+
+          <td>
+            Pembangunan kandang, peralatan, utilitas dan
+            modal proyek sesuai term sheet.
+          </td>
+
+          <td>
+            Priority return / pengembalian modal +
+            porsi keuntungan sesuai risiko.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>Smartfarm / Integrator</strong>
+          </td>
+
+          <td>
+            Sistem produksi, teknis, supply chain,
+            teknologi dan off-take sesuai program.
+          </td>
+
+          <td>
+            Fee, margin kemitraan, atau porsi ekonomi
+            sesuai kontribusi aktual.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout green">
+    <strong>Prinsip penting:</strong> pembagian tidak otomatis 33%–33%–33%.
+    Nilai kontribusi, risiko, modal yang terikat, jangka waktu dan tanggung
+    jawab harus dihitung terlebih dahulu.
+  </div>
+
+  <p>
+    Skema final disepakati melalui Term Sheet dan Perjanjian Kerja Sama
+    setelah due diligence.
+  </p>
+
+  <div class="two-col">
+
+    <div class="card">
+
+      <h3>Pemilik Lahan</h3>
+
+      <p>
+        Memberikan aset lahan sebagai kontribusi non-tunai dan membuka
+        kesempatan bagi investor untuk masuk tanpa harus membeli tanah.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Investor + Smartfarm</h3>
+
+      <p>
+        Investor menyediakan pembiayaan, sedangkan Smartfarm/Integrator
+        membawa sistem, teknologi, supply chain dan dukungan pasar sesuai
+        program yang disepakati.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>4</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 5 — TEKNIS
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">04</span>
+    <h2>RANCANGAN TEKNIS TAHAP I</h2>
+  </div>
+
+  <p>
+    Simulasi teknis awal menggunakan kapasitas ±20.000 DOC per siklus.
+    Angka berikut merupakan asumsi untuk penyusunan model bisnis dan
+    bukan jaminan performa produksi.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Parameter</th>
+          <th>Asumsi Awal</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>DOC masuk</td>
+          <td>20.000 ekor</td>
+        </tr>
+
+        <tr>
+          <td>Mortalitas</td>
+          <td>5% — target simulasi</td>
+        </tr>
+
+        <tr>
+          <td>Ayam terjual</td>
+          <td>±19.000 ekor</td>
+        </tr>
+
+        <tr>
+          <td>Bobot rata-rata</td>
+          <td>1,8 kg/ekor</td>
+        </tr>
+
+        <tr>
+          <td>Live weight</td>
+          <td>±34.200 kg/siklus</td>
+        </tr>
+
+        <tr>
+          <td>Periode produksi</td>
+          <td>±30–35 hari, mengikuti program mitra</td>
+        </tr>
+
+        <tr>
+          <td>Target siklus</td>
+          <td>±6–7 siklus/tahun, tergantung downtime &amp; performa</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <h3>Komponen Sistem Closed House</h3>
+
+  <div class="two-col">
+
+    <div class="card">
+      <h3>Produksi</h3>
+      <p>
+        Feeding system, drinking system, ventilation,
+        cooling, sensor suhu dan kelembapan.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Monitoring</h3>
+      <p>
+        Monitoring konsumsi pakan, air, mortalitas,
+        bobot, FCR dan kondisi lingkungan.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Biosecurity</h3>
+      <p>
+        Kontrol akses, sanitasi, desinfeksi,
+        pengendalian kendaraan dan personel.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Utilitas</h3>
+      <p>
+        Listrik, backup power, sumber air,
+        tandon, drainase dan pengelolaan limbah.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    Spesifikasi final harus ditentukan berdasarkan survey lokasi dan
+    standar teknis mitra Smartfarm/Integrator.
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>5</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 6 — INVESTASI
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">05</span>
+    <h2>ESTIMASI INVESTASI AWAL</h2>
+  </div>
+
+  <p>
+    Kebutuhan investasi awal diperkirakan sekitar
+    <strong>Rp2,5–Rp3,0 miliar</strong> untuk fasilitas closed house
+    ±20.000 ekor beserta fasilitas pendukung.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Komponen</th>
+          <th>Estimasi / Porsi</th>
+          <th>Catatan</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Pekerjaan sipil &amp; bangunan</td>
+          <td>±Rp1,40–1,70 M</td>
+          <td>Kandang, struktur, lantai dan pekerjaan pendukung.</td>
+        </tr>
+
+        <tr>
+          <td>Peralatan closed house</td>
+          <td>±Rp0,60–0,80 M</td>
+          <td>Ventilasi, cooling, feeding, drinking dan kontrol.</td>
+        </tr>
+
+        <tr>
+          <td>Listrik, air &amp; biosecurity</td>
+          <td>±Rp0,20–0,30 M</td>
+          <td>Panel, instalasi, tandon, sanitasi dan akses.</td>
+        </tr>
+
+        <tr>
+          <td>Gudang, ruang operator &amp; pendukung</td>
+          <td>±Rp0,10–0,20 M</td>
+          <td>Disesuaikan kebutuhan lokasi.</td>
+        </tr>
+
+        <tr>
+          <td>Contingency / penyesuaian</td>
+          <td>±Rp0,20–0,30 M</td>
+          <td>Risiko harga dan kondisi lapangan.</td>
+        </tr>
+
+        <tr class="total-row">
+          <td>TOTAL INDIKATIF</td>
+          <td>±Rp2,50–3,00 M</td>
+          <td>Bukan RAB final.</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <h3>Urutan Penetapan Anggaran</h3>
+
+  <div class="flow">
+
+    <div class="flow-box">SURVEY</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">DESAIN</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">RAB</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">QUOTATION</div>
+
+  </div>
+
+  <div class="callout">
+    Investor tidak diminta menyetujui angka investasi hanya berdasarkan
+    proposal awal ini. Nilai final ditetapkan setelah proses teknis dan
+    komersial selesai.
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>6</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 7 — SIMULASI
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">06</span>
+    <h2>SIMULASI EKONOMI 20.000 EKOR</h2>
+  </div>
+
+  <p>
+    Simulasi menggunakan 20.000 DOC, mortalitas 5%, 19.000 ekor terjual,
+    bobot rata-rata 1,8 kg, sehingga produksi sekitar 34.200 kg live weight
+    per siklus.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Harga Jual</th>
+          <th>Omzet / Siklus</th>
+          <th>Biaya @ HPP Rp23.500/kg</th>
+          <th>Selisih Indikatif*</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Rp22.000/kg</td>
+          <td>Rp752.400.000</td>
+          <td>Rp803.700.000</td>
+          <td>−Rp51.300.000</td>
+        </tr>
+
+        <tr>
+          <td>Rp25.000/kg</td>
+          <td>Rp855.000.000</td>
+          <td>Rp803.700.000</td>
+          <td>+Rp51.300.000</td>
+        </tr>
+
+        <tr>
+          <td>Rp27.000/kg</td>
+          <td>Rp923.400.000</td>
+          <td>Rp803.700.000</td>
+          <td>+Rp119.700.000</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    <strong>*Selisih indikatif bukan laba bersih.</strong>
+    HPP ilustratif digunakan untuk sensitivitas. Biaya aktual, depresiasi,
+    bunga/modal, pajak, biaya kosong kandang, biaya manajemen dan struktur
+    kemitraan harus dihitung dalam financial model final.
+  </div>
+
+  <h3>Makna Bagi Investor</h3>
+
+  <p>
+    Proyek harus mengutamakan efisiensi produksi dan kepastian penyerapan.
+    Ketika harga livebird berada di bawah HPP, volume semata tidak
+    menyelesaikan masalah.
+  </p>
+
+  <p>
+    Karena itu, struktur kemitraan dan pengendalian risiko menjadi faktor
+    utama dalam menentukan kelayakan proyek.
+  </p>
+
+  <div class="two-col">
+
+    <div class="card">
+      <h3>Yang Dikendalikan</h3>
+      <p>
+        FCR, mortalitas, konsumsi pakan, konsumsi air,
+        biosecurity, downtime dan biaya operasional.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Yang Dimitigasi</h3>
+      <p>
+        Fluktuasi harga, risiko pasar, penyakit,
+        kualitas DOC dan gangguan utilitas.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>7</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 8 — PRIORITY RETURN
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">07</span>
+    <h2>SKEMA PENGEMBALIAN MODAL INVESTOR</h2>
+  </div>
+
+  <p>
+    Untuk meningkatkan daya tarik proyek, struktur yang ditawarkan bukan
+    sekadar membagi laba sejak hari pertama. Salah satu opsi adalah
+    <strong>Priority Return</strong>: investor memperoleh prioritas
+    pengembalian modal dari arus kas proyek sebelum pembagian laba normal.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Tahap</th>
+          <th>Mekanisme</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>1. Investasi</td>
+          <td>
+            Investor menempatkan modal sesuai budget proyek yang disetujui.
+          </td>
+        </tr>
+
+        <tr>
+          <td>2. Produksi</td>
+          <td>
+            Operasional mengikuti SOP dan kontrak Smartfarm/Integrator.
+          </td>
+        </tr>
+
+        <tr>
+          <td>3. Cash Waterfall</td>
+          <td>
+            Pendapatan → biaya operasional → kewajiban proyek →
+            reserve → alokasi pengembalian modal investor.
+          </td>
+        </tr>
+
+        <tr>
+          <td>4. Priority Return</td>
+          <td>
+            Sebagian arus kas dialokasikan untuk mengembalikan modal
+            investor sesuai jadwal/threshold.
+          </td>
+        </tr>
+
+        <tr>
+          <td>5. Profit Sharing</td>
+          <td>
+            Setelah threshold pengembalian tercapai, laba bersih dibagi
+            sesuai porsi yang disepakati.
+          </td>
+        </tr>
+
+        <tr>
+          <td>6. Exit / Renewal</td>
+          <td>
+            Pada akhir masa kontrak dilakukan pengembalian aset,
+            perpanjangan, buy-out atau mekanisme lain.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    Struktur ini dapat dikombinasikan dengan minimum reserve kas,
+    rekening proyek, laporan bulanan, audit berkala dan hak inspeksi investor.
+  </div>
+
+  <h3>Contoh Alur Dana</h3>
+
+  <div class="flow">
+
+    <div class="flow-box">
+      PENJUALAN
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      BIAYA<br>OPERASIONAL
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      RESERVE
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      RETURN<br>INVESTOR
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      PROFIT<br>SHARING
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>8</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 9 — LAHAN
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">08</span>
+    <h2>KONTRIBUSI LAHAN &amp; PEMBAGIAN HASIL</h2>
+  </div>
+
+  <p>
+    Lahan merupakan kontribusi modal non-tunai. Agar pembagian hasil adil,
+    nilai ekonominya perlu ditentukan dengan metode yang dapat diverifikasi.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Metode</th>
+          <th>Formula</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Nilai sewa</td>
+          <td>Sewa pasar tahunan × masa penggunaan</td>
+        </tr>
+
+        <tr>
+          <td>Appraisal</td>
+          <td>Nilai berdasarkan penilai independen, bila diperlukan</td>
+        </tr>
+
+        <tr>
+          <td>Negotiated Value</td>
+          <td>
+            Nilai kontribusi yang disepakati para pihak dengan dasar
+            yang jelas
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    <strong>Contoh metode — bukan nilai yang ditetapkan:</strong>
+    apabila nilai ekonomi penggunaan lahan disepakati Rp100 juta/tahun
+    selama 10 tahun, kontribusi ekonomi yang diperhitungkan adalah
+    Rp1 miliar.
+  </div>
+
+  <p>
+    Angka aktual harus mengikuti kondisi lokasi dan hasil appraisal atau
+    negosiasi para pihak.
+  </p>
+
+  <p>
+    Dengan metode ini, porsi pemilik lahan tidak ditentukan secara arbitrer.
+    Investor juga dapat melihat dengan jelas berapa nilai kontribusi yang
+    sudah diberikan sebelum proyek berjalan.
+  </p>
+
+  <h3>Prinsip Pembagian</h3>
+
+  <div class="two-col">
+
+    <div class="card">
+      <h3>Kontribusi</h3>
+      <p>
+        Lahan, modal, teknologi, sistem produksi, jaringan supply
+        dan pasar dinilai secara terukur.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Risiko</h3>
+      <p>
+        Risiko modal, operasional dan pasar dibagi sesuai tanggung jawab
+        masing-masing pihak.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>9</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 10 — RISIKO
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">09</span>
+    <h2>RISIKO &amp; MITIGASI</h2>
+  </div>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Risiko</th>
+          <th>Mitigasi yang Diusulkan</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Harga livebird</td>
+          <td>
+            Kemitraan/off-take; sensitivitas harga; evaluasi produksi
+            per siklus.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Pakan &amp; DOC</td>
+          <td>
+            Kontrak supply dan standar kualitas dari mitra.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Penyakit</td>
+          <td>
+            Biosecurity ketat, SOP, monitoring dan technical support.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Listrik / air</td>
+          <td>
+            Backup power, tandon dan desain utilitas berlapis.
+          </td>
+        </tr>
+
+        <tr>
+          <td>FCR / mortalitas</td>
+          <td>
+            Dashboard produksi, KPI operator dan evaluasi flock.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Capex membengkak</td>
+          <td>
+            RAB, quotation dan approval perubahan budget.
+          </td>
+        </tr>
+
+        <tr>
+          <td>Governance</td>
+          <td>
+            Rekening proyek, laporan berkala dan hak audit/inspeksi.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout green">
+    Tidak ada pihak yang menjamin keuntungan tetap.
+    Mitigasi diarahkan untuk membuat risiko terlihat,
+    terukur dan dapat dikelola.
+  </div>
+
+  <h3>Indikator yang Harus Dipantau</h3>
+
+  <div class="two-col">
+
+    <div class="card">
+      <h3>KPI Produksi</h3>
+      <p>
+        Mortalitas, FCR, bobot panen, umur panen,
+        konsumsi pakan dan air.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>KPI Keuangan</h3>
+      <p>
+        Omzet, biaya per kg, cash flow,
+        reserve dan pengembalian modal.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>10</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 11 — DUE DILIGENCE
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">10</span>
+    <h2>DUE DILIGENCE &amp; TAHAP IMPLEMENTASI</h2>
+  </div>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Tahap</th>
+          <th>Output</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>1. Initial Meeting</td>
+          <td>Kesepahaman awal dan kebutuhan data.</td>
+        </tr>
+
+        <tr>
+          <td>2. Survey Lokasi</td>
+          <td>
+            Kelayakan akses, kontur, listrik, air dan lingkungan.
+          </td>
+        </tr>
+
+        <tr>
+          <td>3. Technical Design</td>
+          <td>
+            Layout, kapasitas dan spesifikasi closed house.
+          </td>
+        </tr>
+
+        <tr>
+          <td>4. Feasibility Study</td>
+          <td>
+            Capex, opex, cash flow, BEP, return dan sensitivity.
+          </td>
+        </tr>
+
+        <tr>
+          <td>5. Term Sheet</td>
+          <td>
+            Kontribusi, hak, pembagian hasil dan priority return.
+          </td>
+        </tr>
+
+        <tr>
+          <td>6. Legal Agreement</td>
+          <td>
+            PKS, hak penggunaan lahan, governance dan exit.
+          </td>
+        </tr>
+
+        <tr>
+          <td>7. Construction</td>
+          <td>
+            Pembangunan dan commissioning.
+          </td>
+        </tr>
+
+        <tr>
+          <td>8. First Flock</td>
+          <td>
+            Produksi perdana dan evaluasi KPI.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <h3>Dokumen yang Dapat Disiapkan untuk Verifikasi</h3>
+
+  <ul>
+    <li>Dokumen pertanahan.</li>
+    <li>Identitas pemilik.</li>
+    <li>Foto dan video lokasi.</li>
+    <li>Data akses menuju lokasi.</li>
+    <li>Data listrik dan sumber air.</li>
+    <li>Dokumen legal lain yang relevan.</li>
+  </ul>
+
+  <div class="callout">
+    Dokumen sensitif diberikan secara bertahap sesuai kebutuhan
+    due diligence dan tidak perlu disebarluaskan pada tahap komunikasi awal.
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>11</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 12 — INVESTOR
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">11</span>
+    <h2>PENAWARAN KEPADA INVESTOR / PEMODAL</h2>
+  </div>
+
+  <p>
+    <strong>Kesempatan:</strong> masuk ke proyek peternakan produktif
+    tanpa harus mengadakan lahan dari awal.
+  </p>
+
+  <p>
+    <strong>Kontribusi pemilik:</strong> lahan ±8.110 m² sebagai
+    land contribution.
+  </p>
+
+  <p>
+    <strong>Kebutuhan:</strong> pendanaan pembangunan Fase I dan
+    fasilitas pendukung.
+  </p>
+
+  <p>
+    <strong>Mekanisme:</strong> dapat berupa equity, project financing,
+    atau partnership dengan priority return.
+  </p>
+
+  <p>
+    <strong>Transparansi:</strong> proyek dapat menggunakan rekening proyek,
+    pelaporan produksi dan keuangan, serta mekanisme inspeksi sesuai perjanjian.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Yang Sudah Tersedia</th>
+          <th>Yang Dicari</th>
+          <th>Yang Ditawarkan</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Lahan ±8.110 m²</td>
+          <td>Investor / Pemodal</td>
+          <td>Akses ke proyek berbasis aset lahan</td>
+        </tr>
+
+        <tr>
+          <td>Pemilik siap bekerja sama</td>
+          <td>Modal Fase I</td>
+          <td>Struktur return yang dapat dinegosiasikan</td>
+        </tr>
+
+        <tr>
+          <td>Rencana kapasitas ±20.000</td>
+          <td>Mitra Smartfarm</td>
+          <td>Ekspansi bertahap setelah KPI terbukti</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    Kami mengundang perusahaan/investor untuk melakukan
+    <strong>initial assessment</strong> terlebih dahulu.
+    Komitmen investasi hanya dilakukan setelah survey,
+    feasibility study dan kesepakatan legal.
+  </div>
+
+  <h3>Bentuk Partisipasi Investor</h3>
+
+  <div class="two-col">
+
+    <div class="card">
+      <h3>Strategic Investor</h3>
+      <p>
+        Menyediakan pembiayaan proyek dan memperoleh hak ekonomi
+        sesuai nilai modal, risiko dan jangka waktu.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Project Partner</h3>
+      <p>
+        Bersama-sama membangun, memiliki dan mengoperasikan proyek
+        sesuai struktur kerja sama.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>12</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 13 — SMARTFARM
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">12</span>
+    <h2>PENAWARAN KEPADA MITRA SMARTFARM / INTEGRATOR</h2>
+  </div>
+
+  <p>
+    Kami membuka pembahasan dengan perusahaan yang memiliki program
+    kemitraan broiler, Smartfarm, closed house, poultry technology,
+    feed/DOC supply atau off-take.
+  </p>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Hal yang Dimohonkan dari Mitra</th>
+          <th>Tujuan</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Survey &amp; technical assessment</td>
+          <td>Menentukan kapasitas dan kelayakan lokasi.</td>
+        </tr>
+
+        <tr>
+          <td>Spesifikasi kandang</td>
+          <td>Menyusun desain sesuai standar perusahaan.</td>
+        </tr>
+
+        <tr>
+          <td>Skema kemitraan</td>
+          <td>Menentukan supply, technical support dan settlement.</td>
+        </tr>
+
+        <tr>
+          <td>Off-take / market mechanism</td>
+          <td>Mengurangi risiko penjualan hasil.</td>
+        </tr>
+
+        <tr>
+          <td>Financial assumptions</td>
+          <td>Menyusun model cash flow yang realistis.</td>
+        </tr>
+
+        <tr>
+          <td>Term sheet</td>
+          <td>Menyatukan kepentingan tiga pihak.</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <div class="callout">
+    Proposal ini sengaja dibuat terbuka terhadap beberapa model.
+    Struktur final tidak ditetapkan sebelum mengetahui standar dan
+    program perusahaan yang akan menjadi mitra.
+  </div>
+
+  <h3>Target Diskusi dengan Perusahaan</h3>
+
+  <div class="flow">
+
+    <div class="flow-box">
+      SURVEY
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      DESAIN
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      KEMITRAAN
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      INVESTOR
+    </div>
+
+    <div class="flow-arrow">→</div>
+
+    <div class="flow-box">
+      PROYEK
+    </div>
+
+  </div>
+
+  <p>
+    Dengan pendekatan tersebut, pemilik lahan tidak harus mencari investor
+    sendirian dan investor tidak harus membangun sistem peternakan sendiri.
+    Mitra Smartfarm/Integrator menjadi bagian penting untuk memastikan
+    proyek memiliki standar teknis dan jalur operasional yang jelas.
+  </p>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>13</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 14 — PENUTUP & TANDA TANGAN
+========================================================= -->
+
+<section class="paper">
+
+  <div class="section-title">
+    <span class="section-number">13</span>
+    <h2>PENUTUP &amp; PERNYATAAN MINAT</h2>
+  </div>
+
+  <p>
+    Saya menawarkan lahan ±8.110 m² sebagai dasar pengembangan proyek
+    peternakan broiler modern dan membuka kesempatan kerja sama dengan
+    investor/pemodal serta mitra Smartfarm/Integrator.
+  </p>
+
+  <p>
+    Saya memahami bahwa proyek ini membutuhkan modal, teknologi, manajemen
+    dan pasar yang kuat. Karena itu, saya tidak menawarkan keuntungan yang
+    dijamin. Saya menawarkan kesempatan untuk membangun proyek yang dapat
+    diuji kelayakannya melalui survey, feasibility study, RAB dan perjanjian
+    kerja sama yang transparan.
+  </p>
+
+  <p>
+    Saya siap mengikuti proses pembahasan lebih lanjut apabila pihak
+    perusahaan/investor melihat adanya potensi kerja sama.
+  </p>
+
+  <div class="callout">
+    Demikian proposal ini disampaikan untuk menjadi bahan pembahasan awal.
+  </div>
+
+  <div class="signature">
+
+    <p>
+      Pasuruan / Jawa Timur, 2026
+    </p>
+
+    <div class="signature-space"></div>
+
+    <div class="signature-name">
+      NORMAN SANDHI
+    </div>
+
+    <p class="small">
+      Pemilik / Pengusul Lahan
+    </p>
+
+    <p class="small">
+      WhatsApp: 0851-6254-4856
+    </p>
+
+  </div>
+
+  <div class="callout" style="margin-top:35px;">
+    <strong>Catatan legal:</strong>
+    Dokumen ini adalah proposal penawaran kerja sama.
+    Bukan perjanjian investasi, bukan jaminan keuntungan,
+    dan tidak menggantikan due diligence, appraisal,
+    perizinan, feasibility study atau perjanjian hukum yang diperlukan.
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM</span>
+    <span>14</span>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     HALAMAN 15 — BACK PAGE
+========================================================= -->
+
+<section class="paper">
+
+  <div class="back-page">
+
+    <div class="cover-kicker">
+      INVESTMENT DISCUSSION
+    </div>
+
+    <div class="cover-title">
+      SMARTFARM<br>
+      POULTRY DEVELOPMENT
+    </div>
+
+    <div class="gold-line"></div>
+
+    <div class="contact-box">
+
+      <div class="contact-row">
+        <div>Pemilik / Pengusul</div>
+        <div>Norman Sandhi</div>
+      </div>
+
+      <div class="contact-row">
+        <div>Luas Lahan</div>
+        <div>±8.110 m²</div>
+      </div>
+
+      <div class="contact-row">
+        <div>Tahap Awal</div>
+        <div>±20.000 ekor/siklus</div>
+      </div>
+
+      <div class="contact-row">
+        <div>Kebutuhan Investor</div>
+        <div>Pembangunan Fase I &amp; fasilitas pendukung</div>
+      </div>
+
+      <div class="contact-row">
+        <div>Model Kerja Sama</div>
+        <div>Equity / Financing / Partnership</div>
+      </div>
+
+      <div class="contact-row">
+        <div>Kontak</div>
+        <div><strong>0851-6254-4856</strong></div>
+      </div>
+
+    </div>
+
+    <div class="callout" style="max-width:145mm;margin-top:22px;">
+      Siap untuk survey lokasi, feasibility study,
+      pembahasan term sheet dan penyusunan skema kerja sama.
+    </div>
+
+    <p class="small center" style="margin-top:30px;">
+      2026 • CONFIDENTIAL BUSINESS DISCUSSION
+    </p>
+
+  </div>
+
+  <div class="page-footer">
+    <span>PROPOSAL KEMITRAAN SMARTFARM • ±8.110 m²</span>
+    <span>15</span>
+  </div>
+
+</section>
+
+
+<script>
+function printPDF(){
+  window.print();
+}
+
+/*
+  Keyboard shortcut:
+  Ctrl + P / Cmd + P
+  tetap dapat digunakan untuk mencetak atau
+  menyimpan proposal sebagai PDF.
+*/
+document.addEventListener("keydown", function(event){
+
+  if((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "p"){
+    event.preventDefault();
+    window.print();
+  }
+
+});
+</script>
+
+</body>
+</html>
